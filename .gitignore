@@ -156,3 +156,13 @@ arch/*/configs/vendor/*_defconfig
 #include/linux/oem
 #techpack/
 #opslalib/slalib
+
+# Kernel compilation output directory
+out/
+
+# Wireguard
+net/wireguard/
+
+# Build script and changelog generator
+build.sh
+changelog.sh
