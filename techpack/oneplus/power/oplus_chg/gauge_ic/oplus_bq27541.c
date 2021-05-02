@@ -2993,7 +2993,7 @@ static int gauge_reg_dump(void) {
 			}
 		}
 	}
-	printk(KERN_ERR "[OPLUS_CHG] gauge regs: %s \n", buf);
+	no_printk(KERN_ERR "[OPLUS_CHG] gauge regs: %s \n", buf);
 	return 0;
 }
 

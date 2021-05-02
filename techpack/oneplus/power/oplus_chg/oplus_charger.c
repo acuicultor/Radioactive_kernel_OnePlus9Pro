@@ -116,7 +116,7 @@ extern bool oplus_is_power_off_charging(struct oplus_warp_chip *chip);
 #define charger_xlog_printk(num, fmt, ...) \
 		do { \
 			if (enable_charger_log >= (int)num) { \
-				printk(KERN_NOTICE pr_fmt("[OPLUS_CHG][%s]"fmt), __func__, ##__VA_ARGS__); \
+				no_printk(KERN_NOTICE pr_fmt("[OPLUS_CHG][%s]"fmt), __func__, ##__VA_ARGS__); \
 			} \
 		} while (0)
 
@@ -624,14 +624,7 @@ int oplus_battery_set_property(struct power_supply *psy,
 }
 #endif /* CONFIG_OPLUS_CHG_GKI_SUPPORT */
 
-
-#define OPLUS_MIDAS_CHG_DEBUG 1
-#ifdef OPLUS_MIDAS_CHG_DEBUG
-#define	midas_debug(fmt, args...)	\
-	pr_notice("[OPLUS_MIDAS_CHG_DEBUG]" fmt, ##args)
-#else
 #define	midas_debug(fmt, args...)
-#endif /* OPLUS_MIDAS_CHG_DEBUG */
 
 static struct oplus_midas_chg {
 	int cali_passed_chg;
