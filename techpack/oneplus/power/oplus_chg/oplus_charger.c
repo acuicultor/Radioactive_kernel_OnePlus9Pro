@@ -6395,7 +6395,7 @@ static void oplus_check_battery_vol_diff(struct oplus_chg_chip *chg)
 		vbat_cell_min = 3800;
 	}
 	vbat_cell_min = pval.intval;
-	pr_info("bat vol:(%d,%d)\n", vbat_cell_max, vbat_cell_min);
+	pr_debug("bat vol:(%d,%d)\n", vbat_cell_max, vbat_cell_min);
 	if (abs(vbat_cell_max - vbat_cell_min) > ALLOW_DIFF_VALUE) {
 		chg->check_battery_vol_count++;
 		if (chg->check_battery_vol_count > 5) {
