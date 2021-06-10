@@ -849,9 +849,11 @@
 	pinctrl-0 = <&vbus_ctrl_default>;
 
 	io-channels = <&pmk8350_vadc PM8350_ADC7_AMUX_THM5_30K_PU>,
-			<&pmk8350_vadc PM8350_ADC7_GPIO2_30K_PU>;
+			<&pmk8350_vadc PM8350_ADC7_GPIO2_30K_PU>,
+			<&pmk8350_vadc PM8350_ADC7_VPH_PWR>;
 	io-channel-names = "gpio1_voltage",
-			"gpio3_voltage";
+			"gpio3_voltage",
+			"vph_pwr_vol";
 
 	oplus_typec_ic: oplus,pm8350b_typec {
 		compatible = "oplus,pm8350b-typec";
@@ -885,6 +887,15 @@
 		qcom,oplus_batt_4400mv;
 		qcom,warp-fw-type = <5>;
 		qcom,warp_reply_mcu_bits = <7>;
+		qcom,warp_cool_bat_volt = <3450>;
+		qcom,warp_little_cool_bat_volt = <3400>;
+		qcom,warp_normal_bat_volt = <3350>;
+		qcom,warp_warm_bat_volt = <3300>;
+
+		qcom,warp_cool_bat_suspend_volt = <3450>;
+		qcom,warp_little_cool_bat_suspend_volt = <3400>;
+		qcom,warp_normal_bat_suspend_volt = <3350>;
+		qcom,warp_warm_bat_suspend_volt = <3300>;
 	};
 
 	sy6610_fastcg@06{
@@ -894,6 +905,15 @@
 		qcom,oplus_batt_4400mv;
 		qcom,warp-fw-type = <5>;
 		qcom,warp_reply_mcu_bits = <7>;
+		qcom,warp_cool_bat_volt = <3450>;
+		qcom,warp_little_cool_bat_volt = <3400>;
+		qcom,warp_normal_bat_volt = <3350>;
+		qcom,warp_warm_bat_volt = <3300>;
+
+		qcom,warp_cool_bat_suspend_volt = <3450>;
+		qcom,warp_little_cool_bat_suspend_volt = <3400>;
+		qcom,warp_normal_bat_suspend_volt = <3350>;
+		qcom,warp_warm_bat_suspend_volt = <3300>;
 	};
 };
 
